@@ -1,0 +1,140 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Encabezados */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #444;
+}
+
+h2 {
+    margin-top: 20px;
+    color: #222;
+}
+
+h3 {
+    margin-bottom: 15px;
+    color: #444;
+}
+
+/* Contenedor de los formularios */
+.contact-info,
+.passenger-info {
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+#passenger-forms {
+    margin-top: 10px;
+}
+
+/* Formularios individuales */
+.passenger-form {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #f7f7f7;
+}
+
+.passenger-form h3 {
+    margin-bottom: 10px;
+}
+
+/* Estilo para los campos del formulario */
+.form-group {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+label {
+    text-align: left;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 96%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Botón para generar formularios */
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el contenedor del teléfono */
+.phone-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.phone-container select {
+    width: 25%;
+    padding: 10px;
+}
+
+.phone-container input {
+    flex: 1;
+}
+
+/* Estilo para el checkbox */
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+label[for="promotions"] {
+    font-weight: normal;
+    color: #666;
+}
+
+/* Resaltado para los mensajes */
+.passenger-form h3 {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.passengers{
+    width: 40px;
+    height: 40px;
+}
