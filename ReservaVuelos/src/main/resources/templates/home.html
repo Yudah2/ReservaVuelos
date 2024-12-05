@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirPlaneDk</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/42e1dfea5a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/home">Inicio</a></li>
+                <li><a href="#">Vuelos</a></li>
+                <li><a href="#">Hoteles</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenedor de la imagen rotativa -->
+    <div class="slider-container">
+        <h2>Elige tu Destino y Aquí</h2>
+        <div class="slider-item">
+            <img src="/images/lapaz.jpeg" alt="Imagen 1" class="slider-image">
+            <div class="slider-caption">LA   PAZ</div>
+        </div>
+        <div class="slider-item">
+            <img src="/images/cocha.jpg" alt="Imagen 2" class="slider-image">
+            <div class="slider-caption">COCHABAMBA</div>
+        </div>
+        <div class="slider-item">
+            <img src="/images/santacruz.jpeg" alt="Imagen 3" class="slider-image">
+            <div class="slider-caption">SANTA CRUZ</div>
+        </div>
+
+        <!-- Formulario flotante -->
+
+        <div class="search-panel">
+            <form class="form-search-1">
+                <div class="type">
+                    <label><input type="radio" name="tipo-vuelo" value="vuelta" disabled> Vuelta</label>
+                    <label><input type="radio" name="tipo-vuelo" value="ida" checked> Ida</label>
+                    <label><input type="radio" name="tipo-vuelo" value="multi-city" disabled> Multi-City</label>
+                </div>
+
+                <div class="form-group form-inline arrive">
+                    <div class="form-group">
+                        <label class="form-label" for="origen">Origen</label>
+                        <input type="text" id="origen" value="La Paz">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="destino">Destino</label>
+                        <input type="text" id="destino" placeholder="Destino">
+                    </div>
+                    <div class="form-group" id="button-cont">
+                        <button type="submit" class="button">Buscar Vuelo</button>
+                    </div>
+                </div>
+
+                <div class="form-group form-inline form-date inform">
+                    <div class="inform-departure">
+                        <div class="form-group">
+                            <label class="form-label" for="salida">Salida</label>
+                            <input type="date" id="salida" value="2024-11-26">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="vuelta">Vuelta</label>
+                            <input type="date" id="vuelta" value="2024-12-02">
+                        </div>
+                    </div>
+
+
+                    <div class="inform-passenger">
+                        <div class="form-group">
+                            <label class="form-label" for="pasajeros">Pasajeros</label>
+                            <select id="pasajeros">
+                                <option value="1">Adulto</option>
+                                <option value="2">Niño</option>
+                                <option value="3">Infante</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="clase">Clase</label>
+                            <select id="clase">
+                                <option value="turista">Economica</option>
+                                <option value="turista">Ejecutiva</option>
+                                <option value="turista">Primera Clase</option>
+                                <!-- Añade más opciones si es necesario -->
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group checkbox-group inform-direct">
+                        <input class="form-checkbox" type="checkbox" id="direct-flights" checked disabled>
+                        <label class="form-label-check" for="direct-flights">Vuelos directos únicamente</label>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="content">
+        <section id="home">
+            <h1>Bienvenido a nuestra página</h1>
+            <p>Contenido de la página principal...</p>
+        </section>
+
+        <section id="about">
+            <h1>Sobre nosotros</h1>
+            <p>Información sobre la empresa...</p>
+        </section>
+
+        <section id="services">
+            <h1>Servicios</h1>
+            <p>Detalles sobre los servicios ofrecidos...</p>
+        </section>
+
+        <section id="contact">
+            <h1>Contacto</h1>
+            <p>Formulario o detalles de contacto...</p>
+        </section>
+
+        <section id="contasct">
+            <h1>Contacto</h1>
+            <p>Formulario o detalles de contacto...</p>
+        </section>
+        <section id="s">
+            <h1>Servicios</h1>
+            <p>Detalles sobre los servicios ofrecidos...</p>
+        </section>
+
+        <section id="contadsact">
+            <h1>Contacto</h1>
+            <p>Formulario o detalles de contacto...</p>
+        </section>
+
+        <section id="servisces">
+            <h1>Contacto</h1>
+            <p>Formulario o detalles de contacto...</p>
+        </section>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

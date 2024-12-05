@@ -1,0 +1,286 @@
+/* styles.css */
+body {
+    font-family: "Courier New", sans-serif;
+    background-size: cover;
+    color: black;
+    margin: 0;
+    padding: 0
+}
+header {
+    text-align: center;
+    background-color: black;
+}
+/* Estilo para la barra de navegación */
+.navbar {
+    position: fixed; /* Fija la barra en la parte superior */
+    top: 0; /* Coloca la barra en la parte superior */
+    left: 0; /* Alinea la barra a la izquierda */
+    width: 100%; /* Hace que la barra ocupe todo el ancho de la página */
+    background-color: #780000; /* Color de fondo de la barra */
+    padding: 20px 0; /* Espaciado interno */
+    z-index: 1000; /* Asegura que la barra esté por encima de otros elementos */
+}
+
+.navbar ul {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    margin: 0; /* Elimina el margen */
+    padding: 0; /* Elimina el padding */
+    text-align: center; /* Centra los elementos de la lista */
+}
+
+.navbar ul li {
+    display: inline; /* Muestra los elementos de lista en línea */
+    margin: 0 30px; /* Espaciado entre los elementos */
+}
+
+.navbar ul li a {
+    color: white; /* Color del texto */
+    text-decoration: none; /* Elimina el subrayado */
+    font-size: 18px; /* Tamaño de la fuente */
+    font-family: "Times New Roman";
+    padding: 10px 15px; /* Espaciado interno para los enlaces */
+}
+
+.navbar ul li a:hover {
+    background-color: #C1121F; /* Color de fondo cuando el enlace es hover */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Contenedor de la imagen rotativa */
+.slider-container {
+    position: relative;
+    width: 100%; /* Ajusta el tamaño según lo que necesites */
+    height: 660px;
+    background-color: black;
+    overflow: hidden;
+    border-top: 66px solid #2b2d42;
+    border-bottom: 6px solid #2b2d42;
+}
+
+/* Contenedor de cada imagen y título */
+.slider-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Mostrar el slider activo */
+.slider-item.active {
+    opacity: 1;
+}
+
+.slider-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: fill;
+
+}
+
+/* Mostrar la imagen activa */
+.slider-image.active {
+    opacity: 1;
+}
+
+
+/* Títulos sobre las imágenes */
+.slider-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0); /* Fondo semi-transparente */
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    letter-spacing: 10px;
+}
+
+/* Estilo para el contenido */
+.content section {
+    padding: 50px 20px;
+    margin: 20px 0;
+}
+
+/* Hace que la primera imagen sea visible por defecto */
+.slider-image:first-child {
+    display: block;
+}
+
+/* Agrega algo de espacio en la parte superior de la página para que el contenido no se oculte bajo la barra fija */
+body {
+    margin-top: 0; /* Ajusta este valor según el tamaño de tu barra */
+}
+
+
+
+
+/**/
+/* Formulario flotante */
+.search-panel {
+    position: absolute;
+    top: 75%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el posicionamiento */
+    background-color: rgba(51, 47, 47, 0.4);
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(232, 217, 217, 0.2); /* Sombra */
+    z-index: 2; /* Asegúrate de que esté encima de la imagen */
+    width: 80%; /* Ajusta el ancho según el diseño */
+    max-width: 700px; /* Ancho máximo */
+    place-items: center;
+    padding-top: 10px;
+    font-family: "Montserrat";
+    font-weight: bold;
+}
+
+.form-label {
+    display: block;
+}
+
+.type, .arrive, .inform {
+    display: flex;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #FDF0D5;
+    gap: 30px;
+    width: 700px;
+    color: #780000;
+}
+
+
+
+.inform-departure, .inform-passenger, .inform-direct {
+    display: flex;
+
+}
+
+.inform-departure, .inform-passenger{
+    gap: 2px;
+    width: 200px;
+}
+
+
+
+#salida, #vuelta{
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    width: 99px;
+    height: 40px;
+    border-color: rgba(189, 189, 184, 0.5);
+    border-width: 2px;
+    cursor: pointer;
+}
+
+#pasajeros, #clase {
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    width: 104px;
+    height: 40px;
+    border: 2px rgba(78, 76, 76, 0.4) solid;
+    cursor: pointer;
+
+}
+
+#pasajeros:focus, #clase:focus {
+    border: 2px solid #003049;
+    outline: none;
+    z-index: 100;
+}
+
+.inform-direct {
+    text-align: center;
+    color: #140e20;
+    align-items: center;
+    font-size: 14px;
+    width: 200px;
+    height: 40px;
+}
+
+#origen, #destino {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border-color: rgba(189, 189, 184, 0.5);
+    border-width: 2px;
+    cursor: pointer;
+}
+
+#button-cont {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.button {
+    height: 40px;
+    width: 200px;
+    border-radius: 5px;
+    background-color: #a10e18;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #003049; /* Color de fondo al pasar el ratón */
+}
+
+h2 {
+    font-family: "Courier New";
+    position: absolute;
+    text-align: center;
+    color: #ffffff;
+    font-size: 30px;
+    background-color: rgba(37, 37, 37, 0.1);
+    border: 5px;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.search-panel form div {
+    margin: -1px;
+    padding-bottom: 5px;
+}
+
+.inform {
+    gap: 38px;
+    text-align: center;
+    border-bottom-right-radius: 30px;
+}
+
+.type {
+    background-color: transparent;
+    color: #ffffff;
+    border-top-left-radius: 30px;
+    font-weight: bold;
+}
+
+.arrive {
+    border-top-left-radius: 30px;
+}
+
+/**/
+
+/* Estilo para las secciones del contenido */
+.content section {
+    padding: 50px 20px;
+    margin: 20px 0;
+}

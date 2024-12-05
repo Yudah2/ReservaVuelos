@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Test</title>
+    <link rel="stylesheet" href="/css/results.css">
+</head>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/home">Inicio</a></li>
+                <li><a href="#">Vuelos</a></li>
+                <li><a href="#">Hoteles</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <body>
+        <h1>Prueba Thymeleaf</h1>
+        <p th:text="${vuelos[0]}"></p>
+
+        <div class="flight-card">
+
+            <div class="flight-header">
+                <span class="highlight">Más barato</span>
+            </div>
+
+            <div class="flight-body">
+                <div class="flight-details">
+
+                    <div class="flight-info" >
+                        <p><strong>Salida</strong> 5 dic · Economy</p>
+                        <p class="time">19:10</p>
+                        <p>LPB La Paz</p>
+                    </div>
+                    <div class="flight-duration">
+                        <p>2h 25min</p>
+                        <img src="/images/vuelo2.gif" alt="GIF" class="gif-vuelo">
+                        <p>1 Cambio</p>
+                    </div>
+                    <div class="flight-destination">
+                        <p class="time">21:35</p>
+                        <p>VVI Santa Cruz</p>
+                    </div>
+                    <div class="flight-logo">
+                        <img src="/images/aerolineaIcon1.png" alt="Logo Aerolínea" />
+                    </div>
+                </div>
+
+                <div class="linea-vertical"></div>
+
+                <div class="flight-price">
+                    <p class="seats-warning">¡Apúrate! Solo 7 asientos a este precio.</p>
+                    <p class="price">US$138.74</p>
+                    <p>Precio por adulto</p>
+                    <button class="btn">Ver viaje</button>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
+
+
+

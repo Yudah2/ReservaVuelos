@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Información de Pasajero</title>
+    <link rel="stylesheet" href="/css/passengers.css">
+</head>
+<body>
+<h1>Información de viajero</h1>
+
+<!-- Información de contacto -->
+<div class="contact-info">
+    <h2>Información de contacto de todos los pasajeros</h2>
+    <form>
+        <div class="form-group">
+            <label for="email">Correo electrónico *</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="confirm-email">Confirmar dirección de correo electrónico *</label>
+            <input type="email" id="confirm-email" name="confirm-email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Número de teléfono móvil *</label>
+            <div class="phone-container">
+                <select id="country-code" name="country-code">
+                    <option value="+591">+591</option>
+                </select>
+                <input type="text" id="phone" name="phone" placeholder="Introduce tu número" required>
+                <img src="/images/passenger.gif" alt="Visa" class="passengers">
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="promotions" name="promotions">
+            <label for="promotions">No quiero recibir boletines electrónicos sobre tarifas económicas ni otros descuentos</label>
+        </div>
+    </form>
+</div>
+
+<!-- Información de pasajeros -->
+<div class="passenger-info">
+    <h2>Pasajero(s)</h2>
+    <div id="passenger-forms">
+        <!-- Contenedor donde se añadirán los formularios dinámicamente -->
+    </div>
+</div>
+
+<!-- Plantilla oculta para un formulario de pasajero -->
+<template id="passenger-template">
+    <div class="passenger-form">
+
+        <h3>Pasajero</h3>
+
+        <div class="form-group">
+            <label for="name">Nombre *</label>
+            <input type="text" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Apellido *</label>
+            <input type="text" name="lastname" required>
+        </div>
+        <div class="form-group">
+            <label>Sexo *</label>
+            <div>
+                <input type="radio" name="gender" value="male" required> Sr.
+                <input type="radio" name="gender" value="female" required> Sra.
+            </div>
+        </div>
+    </div>
+</template>
+
+<!-- Botón para generar formularios -->
+<button id="generate-passenger-forms">Agregar Pasajeros</button>
+
+<script src="/js/passenger-info.js"></script>
+</body>
+</html>
