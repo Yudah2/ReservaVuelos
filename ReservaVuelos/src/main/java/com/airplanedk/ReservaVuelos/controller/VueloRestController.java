@@ -5,6 +5,7 @@ import com.airplanedk.ReservaVuelos.service.VueloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -15,8 +16,17 @@ public class VueloRestController {
     private VueloService vueloService;
 
     @GetMapping
-    public List<Vuelo> getAllVuelos() {
-        return vueloService.findAll();
+    public List<Vuelo> getVuelosByCriteria(
+            @RequestParam String origen,
+            @RequestParam String destino,
+            @RequestParam String salida
+    ) {
+        // Convertir la fecha de String a LocalDate
+        LocalDate fecha = LocalDate.parse(salida);
+        List<Vuelo> vuelos = vueloService.findByCriteria(origen, destino, fecha);
+        System.out.println("dfsdffffffffffffffffffffffffffffffffffffffffffffffffffff\n" + origen + "\t" + destino + "\t" + salida);
+        System.out.println(vuelos); // Agrega esta línea para verificar los vuelos
+        return vuelos;
     }
 
     @PostMapping

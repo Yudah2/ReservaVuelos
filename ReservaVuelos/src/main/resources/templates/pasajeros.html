@@ -10,66 +10,81 @@
 <!-- Información de contacto -->
 <div class="contact-info">
     <h2>Información de contacto de todos los pasajeros</h2>
-    <form>
+    <form action="/pasajeros/guardar" method="POST">
         <div class="form-group">
             <label for="email">Correo electrónico *</label>
             <input type="email" id="email" name="email" required>
         </div>
         <div class="form-group">
             <label for="confirm-email">Confirmar dirección de correo electrónico *</label>
-            <input type="email" id="confirm-email" name="confirm-email" required>
+            <input type="email" id="confirm-email" name="confirmEmail" required>
         </div>
         <div class="form-group">
             <label for="phone">Número de teléfono móvil *</label>
             <div class="phone-container">
-                <select id="country-code" name="country-code">
+                <select id="country-code" name="countryCode">
                     <option value="+591">+591</option>
                 </select>
                 <input type="text" id="phone" name="phone" placeholder="Introduce tu número" required>
-                <img src="/images/passenger.gif" alt="Visa" class="passengers">
             </div>
         </div>
-        <div class="form-group">
-            <input type="checkbox" id="promotions" name="promotions">
-            <label for="promotions">No quiero recibir boletines electrónicos sobre tarifas económicas ni otros descuentos</label>
-        </div>
-    </form>
-</div>
 
-<!-- Información de pasajeros -->
-<div class="passenger-info">
-    <h2>Pasajero(s)</h2>
-    <div id="passenger-forms">
-        <!-- Contenedor donde se añadirán los formularios dinámicamente -->
-    </div>
+        <!-- Información de pasajeros -->
+        <div class="passenger-info">
+            <h2>Pasajero(s)</h2>
+            <div id="passenger-forms">
+                <!-- Contenedor donde se añadirán los formularios dinámicamente -->
+            </div>
+        </div>
+
+        <!-- Botón para enviar el formulario -->
+        <button type="submit">Guardar Pasajeros</button>
+    </form>
 </div>
 
 <!-- Plantilla oculta para un formulario de pasajero -->
 <template id="passenger-template">
     <div class="passenger-form">
-
         <h3>Pasajero</h3>
+        <div class="full-name">
+            <div class="form-group">
+                <label for="name">Nombre *</label>
+                <input type="text" name="passengers[0].persona.name" class="iname" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Apellido *</label>
+                <input type="text" name="passengers[0].persona.lastname" class="iname" id="lastname" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="categoria">Categoría</label>
+                <select name="passengers[0].categoria" id="categoria">
+                    <option value="1">Adulto</option>
+                    <option value="2">Niño</option>
+                    <option value="3">Infante</option>
+                </select>
+            </div>
+        </div>
 
-        <div class="form-group">
-            <label for="name">Nombre *</label>
-            <input type="text" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="lastname">Apellido *</label>
-            <input type="text" name="lastname" required>
-        </div>
-        <div class="form-group">
-            <label>Sexo *</label>
-            <div>
-                <input type="radio" name="gender" value="male" required> Sr.
-                <input type="radio" name="gender" value="female" required> Sra.
+        <div class="form-id">
+            <div class="form-info">
+                <label>Sexo *</label>
+                <input type="radio" name="passengers[0].gender" value="male" required> Sr.
+                <input type="radio" name="passengers[0].gender" value="female" required> Sra.
+            </div>
+            <div class="form-info">
+                <label for="ci">CI:</label>
+                <input type="text" name="passengers[0].persona.ci" id="ci" required>
+            </div>
+            <div class="form-info">
+                <label for="birthday">Fecha de Nacimiento:</label>
+                <input type="date" name="passengers[0].persona.birthday" id="birthday" max="2024-12-31" required>
             </div>
         </div>
     </div>
 </template>
 
 <!-- Botón para generar formularios -->
-<button id="generate-passenger-forms">Agregar Pasajeros</button>
+<button type="button" id="generate-passenger-forms">Agregar Pasajeros</button>
 
 <script src="/js/passenger-info.js"></script>
 </body>

@@ -3,14 +3,13 @@ package com.airplanedk.ReservaVuelos.controller;
 import com.airplanedk.ReservaVuelos.model.ContactoPersona;
 import com.airplanedk.ReservaVuelos.service.ContactoPersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/contactoPersona")
-public class ContactoPersonaController {
+public class ContactoPersonaRestController {
     @Autowired
     private ContactoPersonaService contactoPersonaService;
 

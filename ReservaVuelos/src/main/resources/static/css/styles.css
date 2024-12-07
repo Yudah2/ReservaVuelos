@@ -15,7 +15,7 @@ header {
     position: fixed; /* Fija la barra en la parte superior */
     top: 0; /* Coloca la barra en la parte superior */
     left: 0; /* Alinea la barra a la izquierda */
-    width: 100%; /* Hace que la barra ocupe todo el ancho de la página */
+    width: 100%; /* Hace que la barra ocupe */
     background-color: #780000; /* Color de fondo de la barra */
     padding: 20px 0; /* Espaciado interno */
     z-index: 1000; /* Asegura que la barra esté por encima de otros elementos */
@@ -283,4 +283,101 @@ h2 {
 .content section {
     padding: 50px 20px;
     margin: 20px 0;
+}
+
+.custom-select-group {
+    display: flex;
+    gap: 20px;
+}
+
+.custom-select {
+    position: relative;
+    font-family: Arial, sans-serif;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.dropdown-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px;
+    display: none;
+}
+
+.dropdown-menu[hidden] {
+    display: none;
+}
+
+.dropdown-menu li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.counter button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.counter-input {
+    width: 40px;
+    text-align: center;
+    border: none;
+    background-color: #f9f9f9;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    list-style: none;
+    z-index: 1000;
+}
+
+.dropdown-menu[hidden] {
+    display: none;
+}
+
+.dropdown-menu li {
+    margin: 5px 0;
+}
+
+.dropdown-button {
+    cursor: pointer;
 }

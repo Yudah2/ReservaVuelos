@@ -5,6 +5,7 @@ import com.airplanedk.ReservaVuelos.repository.VueloRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -12,6 +13,12 @@ public class VueloService {
 
     @Autowired
     private VueloRepository vueloRepository;
+
+    public List<Vuelo> findByCriteria(String origen, String destino, LocalDate fechaSalida) {
+        List<Vuelo> vuelos = vueloRepository.findByCriteria(origen, destino, fechaSalida);
+
+        return vuelos;
+    }
 
     public List<Vuelo> findAll() {
         return vueloRepository.findAll();
@@ -28,4 +35,5 @@ public class VueloService {
     public void deleteById(Long id) {
         vueloRepository.deleteById(id);
     }
+
 }

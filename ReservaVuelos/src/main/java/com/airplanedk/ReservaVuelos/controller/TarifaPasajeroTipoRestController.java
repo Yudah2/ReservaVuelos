@@ -1,9 +1,7 @@
 package com.airplanedk.ReservaVuelos.controller;
 
-import com.airplanedk.ReservaVuelos.model.Ciudad;
 import com.airplanedk.ReservaVuelos.model.TarifaPasajeroTipo;
 import com.airplanedk.ReservaVuelos.model.TarifaPasajeroTipoService;
-import com.airplanedk.ReservaVuelos.service.CiudadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/tarifaPasajeroTipo")
-public class TarifaPasajeroTipoController {
+public class TarifaPasajeroTipoRestController {
 
     @Autowired
     public TarifaPasajeroTipoService tarifaPasajeroTipoService;

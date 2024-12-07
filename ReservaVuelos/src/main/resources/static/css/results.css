@@ -12,7 +12,7 @@ header {
     position: fixed; /* Fija la barra en la parte superior */
     top: 0; /* Coloca la barra en la parte superior */
     left: 0; /* Alinea la barra a la izquierda */
-    width: 100%; /* Hace que la barra ocupe todo el ancho de la página */
+    width: 100%; /* Hace que la barra ocupe*/
     background-color: #780000; /* Color de fondo de la barra */
     padding: 20px 0; /* Espaciado interno */
     z-index: 1000; /* Asegura que la barra esté por encima de otros elementos */
@@ -57,7 +57,7 @@ header {
     padding: 16px;
     background: #ffffff;
     margin: 16px;
-    width: 800px;
+    width: 890px;
 }
 
 .flight-header .highlight {
@@ -86,13 +86,14 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 450px;
+    width: 560px;
     margin-top: 15px;
 }
 
 .flight-info ,
 .flight-destination {
     text-align: center;
+    width: 215px;
 }
 
 .flight-info {
@@ -110,7 +111,7 @@ header {
 }
 
 .gif-vuelo {
-    width: 30px;
+    width: 40px;
     height: 20px;
 }
 
@@ -156,4 +157,10 @@ header {
 
 .btn:hover {
     background: #005c3a;
+}
+
+.time {
+    font-size: 30px;
+    margin-bottom: 2px;
+    font-weight: bold;
 }

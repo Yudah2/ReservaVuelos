@@ -138,3 +138,22 @@ label[for="promotions"] {
     width: 40px;
     height: 40px;
 }
+
+
+.full-name, .form-id {
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+
+}
+
+.passenger-form .form-group {
+    width: 250px;
+}
+
+.passenger-form .form-info {
+
+    width: 150px;
+}
+
+

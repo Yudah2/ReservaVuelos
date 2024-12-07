@@ -17,7 +17,21 @@ function showNextSlide() {
 // Mostrar el primer slider
 sliderItems[currentIndex].classList.add('active');
 
-// Cambiar el slider cada 3 segundos
-setInterval(showNextSlide, 8000);
+
+document.getElementById("form-search-1").addEventListener("submit", async (event) => {
+    event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+
+    const origen = document.getElementById("origen").value;
+    const destino = document.getElementById("destino").value;
+    const fechaSalida = document.getElementById("salida").value;
+
+    try {
+        const response = await fetch(`/api/vuelo?origen=${origen}&destino=${destino}&fechaSalida=${fechaSalida}`);
+        const vuelos = await response.json();
+        console.log(vuelos); // Verifica la respuesta en la consola
+    } catch (error) {
+        console.error("Error al buscar vuelos:", error);
+    }
+});
 
 

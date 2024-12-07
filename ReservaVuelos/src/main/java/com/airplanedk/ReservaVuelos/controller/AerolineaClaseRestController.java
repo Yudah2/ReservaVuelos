@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/aerolineaClase")
-public class AerolineaClaseController {
+public class AerolineaClaseRestController {
 
     @Autowired
     private AerolineaClaseService aerolinaClaseService;

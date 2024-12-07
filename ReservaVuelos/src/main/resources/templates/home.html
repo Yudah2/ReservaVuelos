@@ -39,7 +39,7 @@
         <!-- Formulario flotante -->
 
         <div class="search-panel">
-            <form class="form-search-1">
+            <form class="form-search-1" action="/resultados" method="GET">
                 <div class="type">
                     <label><input type="radio" name="tipo-vuelo" value="vuelta" disabled> Vuelta</label>
                     <label><input type="radio" name="tipo-vuelo" value="ida" checked> Ida</label>
@@ -49,11 +49,11 @@
                 <div class="form-group form-inline arrive">
                     <div class="form-group">
                         <label class="form-label" for="origen">Origen</label>
-                        <input type="text" id="origen" value="La Paz">
+                        <input type="text" id="origen" value="La Paz" name="origen">
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="destino">Destino</label>
-                        <input type="text" id="destino" placeholder="Destino">
+                        <input type="text" id="destino" placeholder="Destino" name="destino">
                     </div>
                     <div class="form-group" id="button-cont">
                         <button type="submit" class="button">Buscar Vuelo</button>
@@ -64,11 +64,11 @@
                     <div class="inform-departure">
                         <div class="form-group">
                             <label class="form-label" for="salida">Salida</label>
-                            <input type="date" id="salida" value="2024-11-26">
+                            <input type="date" id="salida" value="2024-11-26" name="salida">
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="vuelta">Vuelta</label>
-                            <input type="date" id="vuelta" value="2024-12-02">
+                            <input type="date" id="vuelta" value="2024-12-02" name="vuelta">
                         </div>
                     </div>
 
@@ -76,7 +76,7 @@
                     <div class="inform-passenger">
                         <div class="form-group">
                             <label class="form-label" for="pasajeros">Pasajeros</label>
-                            <select id="pasajeros">
+                            <select id="pasajeros" name="pasajeros">
                                 <option value="1">Adulto</option>
                                 <option value="2">Niño</option>
                                 <option value="3">Infante</option>
@@ -84,7 +84,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="clase">Clase</label>
-                            <select id="clase">
+                            <select id="clase" name="clase">
                                 <option value="turista">Economica</option>
                                 <option value="turista">Ejecutiva</option>
                                 <option value="turista">Primera Clase</option>
@@ -149,5 +149,6 @@
     </div>
 
     <script src="/js/script.js"></script>
+    <script src="/js/validations.js"></script>
 </body>
 </html>

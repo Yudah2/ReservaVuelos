@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/pasajeroTarifa")
-public class PasajeroTarifaController {
+public class PasajeroTarifaRestController {
 
     @Autowired
     private PasajeroTarifaService pasajeroTarifaService;

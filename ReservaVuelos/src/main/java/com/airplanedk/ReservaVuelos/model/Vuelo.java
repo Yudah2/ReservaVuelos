@@ -45,6 +45,12 @@ public class Vuelo {
     @Column(name = "asientos", nullable = false)
     private Integer asientos;
 
+    @Column(name = "asientosDisponibles", nullable = false)
+    private Integer asientosDisponibles;
+
+    @Column(name = "asientosOcupados", nullable = false)
+    private Integer asientosOcupados;
+
     // Getters y setters
 
     public Long getIdVuelo() {
@@ -135,6 +141,22 @@ public class Vuelo {
         this.asientos = asientos;
     }
 
+    public Integer getAsientosOcupados() {
+        return asientosOcupados;
+    }
+
+    public void setAsientosOcupados(Integer asientosOcupados) {
+        this.asientosOcupados = asientosOcupados;
+    }
+
+    public Integer getAsientosDisponibles() {
+        return asientosDisponibles;
+    }
+
+    public void setAsientosDisponibles(Integer asientosDisponibles) {
+        this.asientosDisponibles = asientosDisponibles;
+    }
+
     @Override
     public String toString() {
         return "Vuelo{" +
@@ -149,6 +171,8 @@ public class Vuelo {
                 ", fechaLlegada=" + fechaLlegada +
                 ", horaLlegada=" + horaLlegada +
                 ", asientos=" + asientos +
+                ", asientosDisponibles=" + asientosDisponibles +
+                ", asientosOcupados=" + asientosOcupados +
                 '}';
     }
 }
