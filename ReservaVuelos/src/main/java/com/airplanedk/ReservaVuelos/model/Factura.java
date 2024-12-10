@@ -1,6 +1,5 @@
 package com.airplanedk.ReservaVuelos.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -23,9 +22,17 @@ public class Factura {
     @Column(name = "detalles", nullable = false, length = 200)
     private String detalles;
 
-    @ManyToOne
-    @JoinColumn(name = "reserva_idReserva", nullable = false)
-    private Reserva reserva;
+    @Column(name = "numeroTarjeta", nullable = false)
+    private String numeroTarjeta;
+
+    @Column(name = "fechaVencimiento", nullable = false)
+    private LocalDate fechaVencimiento;
+
+    @Column(name = "cvv", nullable = false)
+    private int cvv;
+
+    @Column(name = "titular", nullable = false, length = 200)
+    private String titular;
 
     // Getters y setters
 
@@ -61,12 +68,50 @@ public class Factura {
         this.detalles = detalles;
     }
 
-    public Reserva getReserva() {
-        return reserva;
+    public String getNumeroTarjeta() {
+        return numeroTarjeta;
     }
 
-    public void setReserva(Reserva reserva) {
-        this.reserva = reserva;
+    public void setNumeroTarjeta(String numeroTarjeta) {
+        this.numeroTarjeta = numeroTarjeta;
+    }
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+
+    public int getCvv() {
+        return cvv;
+    }
+
+    public void setCvv(int cvv) {
+        this.cvv = cvv;
+    }
+
+    public LocalDate getFechaVencimiento() {
+        return fechaVencimiento;
+    }
+
+    public void setFechaVencimiento(LocalDate fechaVencimiento) {
+        this.fechaVencimiento = fechaVencimiento;
+    }
+
+    @Override
+    public String toString() {
+        return "Factura{" +
+                "idFactura=" + idFactura +
+                ", fechaEmision=" + fechaEmision +
+                ", monto=" + monto +
+                ", detalles='" + detalles + '\'' +
+                ", numeroTarjeta=" + numeroTarjeta +
+                ", fechaVencimiento=" + fechaVencimiento +
+                ", cvv=" + cvv +
+                ", titular='" + titular + '\'' +
+                '}';
     }
 }
 

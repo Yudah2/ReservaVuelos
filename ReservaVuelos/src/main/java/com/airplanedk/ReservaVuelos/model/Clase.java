@@ -30,4 +30,12 @@ public class Clase {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
+    @Override
+    public String toString() {
+        return "Clase{" +
+                "idClase=" + idClase +
+                ", tipo='" + tipo + '\'' +
+                '}';
+    }
 }

@@ -45,4 +45,13 @@ public class ContactoPersona {
     public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
+
+    @Override
+    public String toString() {
+        return "ContactoPersona{" +
+                "idContactoPersona=" + idContactoPersona +
+                ", email='" + email + '\'' +
+                ", telefono=" + telefono +
+                '}';
+    }
 }

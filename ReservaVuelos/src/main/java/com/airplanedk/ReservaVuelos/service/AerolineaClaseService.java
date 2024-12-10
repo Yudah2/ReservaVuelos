@@ -11,22 +11,25 @@ import java.util.List;
 public class AerolineaClaseService {
 
     @Autowired
-    private AerolineaClaseRepository aerolinaClaseRepository;
+    private AerolineaClaseRepository aerolineaClaseRepository;
 
+    public AerolineaClase obtenerAerolineaClase(String tipoClase, Long idVuelo) {
+        return aerolineaClaseRepository.findAerolineaClaseByTipoAndVuelo(tipoClase, idVuelo).orElseThrow(() -> new IllegalArgumentException("No se encontró la aerolínea clase para el tipo " + tipoClase + " y vuelo " + idVuelo));
+    }
     public List<AerolineaClase> findAll() {
-        return aerolinaClaseRepository.findAll();
+        return aerolineaClaseRepository.findAll();
     }
 
     public AerolineaClase save(AerolineaClase aerolineaClase) {
-        return aerolinaClaseRepository.save(aerolineaClase);
+        return aerolineaClaseRepository.save(aerolineaClase);
     }
 
     public List<AerolineaClase> saveAll(List<AerolineaClase> aerolineaClases) {
-        return aerolinaClaseRepository.saveAll(aerolineaClases);
+        return aerolineaClaseRepository.saveAll(aerolineaClases);
     }
 
     public void deleteById(Long id) {
-        aerolinaClaseRepository.deleteById(id);
+        aerolineaClaseRepository.deleteById(id);
     }
 }
 

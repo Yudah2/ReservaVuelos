@@ -54,7 +54,10 @@
                 <p class="seats-warning" th:text="'¡Apúrate! Quedan ' + ${vuelo.asientosDisponibles} + ' asientos a este precio.'"  ></p>
                 <p class="price" th:text="'US$' + ${vuelo.precioBase}"></p>
                 <p>Precio por adulto</p>
-                <button class="btn">Ver viaje</button>
+                <form action="/resultados/seleccionar" method="post">
+                    <input type="hidden" name="idVuelo" th:value="${vuelo.idVuelo}">
+                    <button class="btn">Seleccionar Vuelo</button>
+                </form>
             </div>
         </div>
     </div>

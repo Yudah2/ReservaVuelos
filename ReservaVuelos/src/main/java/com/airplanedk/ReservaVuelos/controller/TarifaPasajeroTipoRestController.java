@@ -1,7 +1,7 @@
 package com.airplanedk.ReservaVuelos.controller;
 
 import com.airplanedk.ReservaVuelos.model.TarifaPasajeroTipo;
-import com.airplanedk.ReservaVuelos.model.TarifaPasajeroTipoService;
+import com.airplanedk.ReservaVuelos.service.TarifaPasajeroTipoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

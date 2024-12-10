@@ -68,4 +68,15 @@ public class Asiento {
     public void setAerolineaClase(AerolineaClase aerolineaClase) {
         this.aerolineaClase = aerolineaClase;
     }
+
+    @Override
+    public String toString() {
+        return "Asiento{" +
+                "id=" + id +
+                ", numero='" + numero + '\'' +
+                ", estado='" + estado + '\'' +
+                ", vuelo=" + vuelo +
+                ", aerolineaClase=" + aerolineaClase +
+                '}';
+    }
 }

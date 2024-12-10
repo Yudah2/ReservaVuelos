@@ -43,5 +43,13 @@ public class Aeropuerto {
         this.ciudad = ciudad;
     }
 
+    @Override
+    public String toString() {
+        return "Aeropuerto{" +
+                "idAeropuerto=" + idAeropuerto +
+                ", nombre='" + nombre + '\'' +
+                ", ciudad=" + ciudad +
+                '}';
+    }
 }
 

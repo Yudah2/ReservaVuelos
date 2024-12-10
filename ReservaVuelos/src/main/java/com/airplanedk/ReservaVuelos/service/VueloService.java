@@ -20,6 +20,10 @@ public class VueloService {
         return vuelos;
     }
 
+    public Vuelo findById(Long id) {
+        return vueloRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Vuelo no encontrado con ID: " + id));
+    }
+
     public List<Vuelo> findAll() {
         return vueloRepository.findAll();
     }

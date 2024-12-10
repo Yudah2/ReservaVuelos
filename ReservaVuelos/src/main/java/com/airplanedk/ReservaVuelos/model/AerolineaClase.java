@@ -56,6 +56,16 @@ public class AerolineaClase {
     public void setClase(Clase clase) {
         this.clase = clase;
     }
+
+    @Override
+    public String toString() {
+        return "AerolineaClase{" +
+                "idAerolineaClase=" + idAerolineaClase +
+                ", precio=" + precio +
+                ", aerolinea=" + aerolinea +
+                ", clase=" + clase +
+                '}';
+    }
 }
 
 

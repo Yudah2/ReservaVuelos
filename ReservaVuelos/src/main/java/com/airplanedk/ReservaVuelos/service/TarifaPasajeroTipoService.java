@@ -1,5 +1,6 @@
-package com.airplanedk.ReservaVuelos.model;
+package com.airplanedk.ReservaVuelos.service;
 
+import com.airplanedk.ReservaVuelos.model.TarifaPasajeroTipo;
 import com.airplanedk.ReservaVuelos.repository.TarifaPasajeroTipoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,9 @@ public class TarifaPasajeroTipoService {
     @Autowired
     private TarifaPasajeroTipoRepository tarifaPasajeroTipoRepository;
 
+    public TarifaPasajeroTipo obtenerTarifaPorTipoYVuelo(String tipoPasajero, Long idVuelo) {
+        return tarifaPasajeroTipoRepository.findByTipoPasajeroAndIdVuelo(tipoPasajero, idVuelo);
+    }
     public List<TarifaPasajeroTipo> findAll() {
         return tarifaPasajeroTipoRepository.findAll();
     }

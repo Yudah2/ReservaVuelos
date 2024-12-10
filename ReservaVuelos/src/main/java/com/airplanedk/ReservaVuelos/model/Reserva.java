@@ -2,7 +2,8 @@ package com.airplanedk.ReservaVuelos.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import java.util.Date;
+
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "reserva")
@@ -19,7 +20,7 @@ public class Reserva {
     @Column(name = "fechaReserva", nullable = false)
     @Temporal(TemporalType.DATE)
     @JsonIgnore
-    private Date fechaReserva;
+    private LocalDate fechaReserva;
 
     @ManyToOne
     @JoinColumn(name = "asiento_idAsiento", nullable = false)
@@ -28,6 +29,10 @@ public class Reserva {
     @ManyToOne
     @JoinColumn(name = "pasajero_idPasajero", nullable = false)
     private Pasajero pasajero;
+
+    @ManyToOne
+    @JoinColumn(name = "factura_idFactura", nullable = false)
+    private Factura factura;
 
     // Getters y Setters
     public Long getIdReserva() {
@@ -46,11 +51,11 @@ public class Reserva {
         this.estado = estado;
     }
 
-    public Date getFechaReserva() {
+    public LocalDate getFechaReserva() {
         return fechaReserva;
     }
 
-    public void setFechaReserva(Date fechaReserva) {
+    public void setFechaReserva(LocalDate fechaReserva) {
         this.fechaReserva = fechaReserva;
     }
 
@@ -68,5 +73,24 @@ public class Reserva {
 
     public void setPasajero(Pasajero pasajero) {
         this.pasajero = pasajero;
+    }
+
+    public Factura getFactura() {
+        return factura;
+    }
+
+    public void setFactura(Factura factura) {
+        this.factura = factura;
+    }
+
+    @Override
+    public String toString() {
+        return "Reserva{" +
+                "idReserva=" + idReserva +
+                ", estado='" + estado + '\'' +
+                ", fechaReserva=" + fechaReserva +
+                ", asiento=" + asiento +
+                ", pasajero=" + pasajero +
+                '}';
     }
 }

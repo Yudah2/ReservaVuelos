@@ -61,4 +61,15 @@ public class Aerolinea {
     public void setContacto(String contacto) {
         this.contacto = contacto;
     }
+
+    @Override
+    public String toString() {
+        return "Aerolinea{" +
+                "idAerolinea=" + idAerolinea +
+                ", nombre='" + nombre + '\'' +
+                ", codigo='" + codigo + '\'' +
+                ", pais='" + pais + '\'' +
+                ", contacto='" + contacto + '\'' +
+                '}';
+    }
 }

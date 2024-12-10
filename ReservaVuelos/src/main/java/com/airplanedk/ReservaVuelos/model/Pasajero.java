@@ -54,5 +54,18 @@ public class Pasajero {
     public void setContactoPersona(ContactoPersona contactoPersona) {
         this.contactoPersona = contactoPersona;
     }
+
+    @Override
+    public String toString() {
+        return "Pasajero{" +
+                "idPasajero=" + idPasajero +
+                ", tipo='" + tipo + '\'' +
+                ", persona=" + persona +
+                ", contactoPersona=" + contactoPersona +
+                '}';
+    }
+
+
+
 }
 

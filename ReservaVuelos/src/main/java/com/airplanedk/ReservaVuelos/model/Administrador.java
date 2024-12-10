@@ -54,5 +54,15 @@ public class Administrador {
     public void setContactoPersona(ContactoPersona contactoPersona) {
         this.contactoPersona = contactoPersona;
     }
+
+    @Override
+    public String toString() {
+        return "Administrador{" +
+                "idAdministrador=" + idAdministrador +
+                ", nivelPermiso='" + nivelPermiso + '\'' +
+                ", persona=" + persona +
+                ", contactoPersona=" + contactoPersona +
+                '}';
+    }
 }
 

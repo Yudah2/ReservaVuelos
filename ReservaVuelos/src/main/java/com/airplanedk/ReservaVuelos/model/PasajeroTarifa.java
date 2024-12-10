@@ -43,5 +43,14 @@ public class PasajeroTarifa {
     public void setTarifaPasajeroTipo(TarifaPasajeroTipo tarifaPasajeroTipo) {
         this.tarifaPasajeroTipo = tarifaPasajeroTipo;
     }
+
+    @Override
+    public String toString() {
+        return "PasajeroTarifa{" +
+                "idPasajeroTarifa=" + idPasajeroTarifa +
+                ", pasajero=" + pasajero +
+                ", tarifaPasajeroTipo=" + tarifaPasajeroTipo +
+                '}';
+    }
 }
 

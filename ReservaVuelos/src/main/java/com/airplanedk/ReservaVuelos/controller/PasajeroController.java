@@ -1,11 +1,9 @@
 package com.airplanedk.ReservaVuelos.controller;
 
-import com.airplanedk.ReservaVuelos.model.ContactoPersona;
-import com.airplanedk.ReservaVuelos.model.Pasajero;
-import com.airplanedk.ReservaVuelos.model.Persona;
-import com.airplanedk.ReservaVuelos.repository.ContactoPersonaRepository;
-import com.airplanedk.ReservaVuelos.repository.PasajeroRepository;
-import com.airplanedk.ReservaVuelos.repository.PersonaRepository;
+import com.airplanedk.ReservaVuelos.model.*;
+import com.airplanedk.ReservaVuelos.service.AerolineaClaseService;
+import com.airplanedk.ReservaVuelos.service.ReservaManager;
+import com.airplanedk.ReservaVuelos.service.TarifaPasajeroTipoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,13 +19,10 @@ import java.util.List;
 public class PasajeroController {
 
     @Autowired
-    private PersonaRepository personaRepository;
+    public TarifaPasajeroTipoService tarifaPasajeroTipoService;
 
     @Autowired
-    private ContactoPersonaRepository contactoPersonaRepository;
-
-    @Autowired
-    private PasajeroRepository pasajeroRepository;
+    public AerolineaClaseService aerolineaClaseService;
 
     @GetMapping
     public String mostrarFormularioPasajeros() {
@@ -55,10 +50,12 @@ public class PasajeroController {
         ContactoPersona contactoPersona = new ContactoPersona();
         contactoPersona.setEmail(email);
         contactoPersona.setTelefono(Integer.parseInt(phone));
-        ContactoPersona contactoGuardado = contactoPersonaRepository.save(contactoPersona);
+        ReservaManager.getInstance().setContactoPersona(contactoPersona);
+
 
         System.out.println(names);
 
+        AerolineaClase aerolineaClase = aerolineaClaseService.obtenerAerolineaClase(ReservaManager.getInstance().getClase(), ReservaManager.getInstance().getVueloSeleccionado().getIdVuelo());
 
         // Guardar cada persona y su relación con pasajero
         for (int i = 0; i < names.size(); i++) {
@@ -69,33 +66,42 @@ public class PasajeroController {
             persona.setGenero(genders.get(i));
             persona.setDocumentoIdentidad(cis.get(i));
             persona.setFechaNacimiento(LocalDate.parse(birthdays.get(i)));
-            Persona personaGuardada = personaRepository.save(persona);
+            ReservaManager.getInstance().setPersonas(persona);
 
             // Crear y guardar Pasajero
             Pasajero pasajero = new Pasajero();
-            pasajero.setTipo(obtenerTipoPasajero(categorias.get(i))); // Asignar tipo según la categoría
-            pasajero.setPersona(personaGuardada);
-            pasajero.setContactoPersona(contactoGuardado);
-            pasajeroRepository.save(pasajero);
+            pasajero.setTipo(categorias.get(i)); // Asignar tipo según la categoría
+            pasajero.setPersona(ReservaManager.getInstance().getPersonas(i));
+            pasajero.setContactoPersona(ReservaManager.getInstance().getContactoPersona());
+            ReservaManager.getInstance().setPasajeros(pasajero);
+
+
+            TarifaPasajeroTipo tarifaPasajeroTipo = tarifaPasajeroTipoService.obtenerTarifaPorTipoYVuelo(categorias.get(i), ReservaManager.getInstance().getVueloSeleccionado().getIdVuelo());
+            PasajeroTarifa pasajeroTarifa = new PasajeroTarifa();
+            pasajeroTarifa.setPasajero(pasajero);
+            pasajeroTarifa.setTarifaPasajeroTipo(tarifaPasajeroTipo);
+            ReservaManager.getInstance().setPasajeroTarifas(pasajeroTarifa);
+            System.out.println(tarifaPasajeroTipo);
+
+            Asiento asiento = new Asiento();
+            asiento.setNumero("9C" + " - " + ReservaManager.getInstance().getClase().substring(0, 3).toUpperCase());
+            asiento.setEstado("Espera");
+            asiento.setVuelo(ReservaManager.getInstance().getVueloSeleccionado());
+            asiento.setAerolineaClase(aerolineaClase);
+            ReservaManager.getInstance().setAsientos(asiento);
         }
 
-        return "redirect:/confirmacion"; // Redirigir a una página de confirmación
-    }
+        System.out.println(ReservaManager.getInstance().getVueloSeleccionado());
+        System.out.println(aerolineaClase);
+        System.out.println(ReservaManager.getInstance().getAsientos(0));
 
-    /**
-     * Método auxiliar para convertir la categoría en el tipo de pasajero.
-     */
-    private String obtenerTipoPasajero(String categoria) {
-        switch (categoria) {
-            case "1":
-                return "Adulto";
-            case "2":
-                return "Niño";
-            case "3":
-                return "Infante";
-            default:
-                throw new IllegalArgumentException("Categoría desconocida: " + categoria);
-        }
+        System.out.println(ReservaManager.getInstance().getPersonas(0));
+        System.out.println(ReservaManager.getInstance().getContactoPersona());
+        System.out.println(ReservaManager.getInstance().getPasajeros(0));
+
+        System.out.println(ReservaManager.getInstance().getPasajeroTarifas(0));
+
+        return "redirect:/factura"; // Redirigir a una página de confirmación
     }
 }
 
