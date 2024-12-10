@@ -29,17 +29,11 @@ public class PasajeroController {
     @Autowired
     private PasajeroRepository pasajeroRepository;
 
-    /**
-     * Método para mostrar la página de formulario de pasajeros.
-     */
     @GetMapping
     public String mostrarFormularioPasajeros() {
         return "pasajeros"; // Nombre del archivo HTML en la carpeta 'templates'
     }
 
-    /**
-     * Método para guardar los datos de los pasajeros enviados desde el formulario.
-     */
     @PostMapping("/guardar")
     public String guardarPasajeros(
             @RequestParam("email") String email,
@@ -62,6 +56,9 @@ public class PasajeroController {
         contactoPersona.setEmail(email);
         contactoPersona.setTelefono(Integer.parseInt(phone));
         ContactoPersona contactoGuardado = contactoPersonaRepository.save(contactoPersona);
+
+        System.out.println(names);
+
 
         // Guardar cada persona y su relación con pasajero
         for (int i = 0; i < names.size(); i++) {
